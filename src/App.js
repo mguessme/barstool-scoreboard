@@ -1,14 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
-import BoxScore from './BoxScore.js'
+import MLBScore from './MLBScore.js'
+import NBAScore from './NBAScore.js';
 
 function App() {
   return (
     <div className="App">
       <header id="siteheader">
-        Barstool Scoreboard
+        <h1>Barstool Scoreboard</h1>
       </header>
-      <BoxScore />
+      <NBAScore />
+      <MLBScore />
     </div>
   );
 }

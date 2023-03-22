@@ -15,7 +15,16 @@ body {
   color: var(--black);
 }
 
+.App {
+  max-width: 100%;
+  padding-top: calc(100px + 2%);
+  overflow: hidden;
+}
+
 #siteheader {
+  width: 100%;
+  position: fixed;
+  top: 0;
   background: var(--red);
   color: var(--white);
   font: "Bebas Neue", Impact, -apple-system, "Segoe UI", Arial, sans-serif;
@@ -25,8 +34,23 @@ body {
   padding: 1rem;
 }
 
+h1 {
+  font-size: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+.nba-scores {
+  margin-bottom: calc(50px + 5%);
+}
+
 .mlb-scores {
-  margin: 10vh auto;
+  margin-bottom: 50px;
+}
+
+.boxscore-wrapper {
+  max-width: 100%;
+  overflow: auto;
 }
 
 .boxscore {
@@ -34,7 +58,11 @@ body {
   color: var(--midgray);
   border: 1px solid var(--gray);
   border-radius: 5px;
-  overflow: hidden;
+  overflow: auto;
+}
+
+.mlb-scores .boxscore {
+  min-width: 340px;
 }
 
 .boxscore__label {
@@ -51,9 +79,6 @@ body {
   align-items: center;
 }
 
-.boxscore__team__units {
-}
-
 .boxscore__team__results {
   border-left: 1px solid var(--gray);
 }
@@ -63,11 +88,9 @@ body {
   font-weight: 600;
 }
 
-
 .boxscore__team--header {
   border-bottom: 1px solid var(--gray);
 }
-
 
 .boxscore__team__units,
 .boxscore__team__results {
@@ -112,4 +135,26 @@ body {
 
 .boxscore__details__info {
   flex: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .boxscore__team__units span, .boxscore__team__results span {
+    width: 2.5rem;
+    font-size: .875rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #siteheader {
+    font-size: 1.5rem;
+  }
+  .mlb-scores .boxscore__team__units span, .mlb-scores .boxscore__team__results span {
+    width: 2rem;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .mlb-scores .boxscore__team__units span, .mlb-scores .boxscore__team__results span {
+    width: 1.5rem;
+  }
 }
